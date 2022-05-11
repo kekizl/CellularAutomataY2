@@ -1,5 +1,7 @@
 [![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
-[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
+[![macOS](https://svgshare.com/i/ZjP.svg)](https://svgshare.com/i/ZjP.svg)
+[![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/kekizl/CellularAutomataY2)
 
 # CellularAutomataY2
 A Cellular Automata made in C.
@@ -21,7 +23,7 @@ y number works.
 ## Sample Output
 A sample output from running the tester file should be as follows:
 
-
+```
 Please enter the number of the rule you want: 30
 
 Please enter the number of cells you want: 30
@@ -48,6 +50,7 @@ Please enter the number of generations you want: 10
 000111000100000111000001011001
 
 101100101110001100100011010111
+```
 
 ## Future Enhancements
 Possible extensions I would like to implement in the future include the following:
