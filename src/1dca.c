@@ -159,7 +159,7 @@ int printToFile(int rule, int genLength, int kids,
     return -1;
   }
   // open file and initialize variables for the loops
-  FILE *f = fopen("test.txt", "w");
+  FILE *f = fopen("src/test.txt", "w");
   int i, j;
 
   time_t t;
