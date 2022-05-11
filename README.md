@@ -59,6 +59,3 @@ Possible extensions I would like to implement in the future include the followin
 
 - 2D Automata
 
-
-
-![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=kekizl&theme=blue-green)
