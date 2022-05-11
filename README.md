@@ -23,14 +23,23 @@ Please enter the number of cells you want: 30
 Please enter the number of generations you want: 10
 
 000100000000000100000000000000
+
 001110000000001110000000000000
+
 011001000000011001000000000000
+
 110111100000110111100000000000
+
 100100010001100100010000000001
+
 011110111011011110111000000011
+
 010000100010010000100100000110
+
 111001110111111001111110001101
+
 000111000100000111000001011001
+
 101100101110001100100011010111
 
 ## Future Enhancements
@@ -40,7 +49,7 @@ Possible extensions I would like to implement in the future include the followin
 
 - 2D Automata
 
-
+## Badges
 ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=kekizl&show_icons=true)
 
 ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=kekizl&theme=blue-green)
