@@ -17,7 +17,7 @@ int ruleArr[8] = {0, 0, 0, 0, 0, 0, 0, 0};
  *Generates new generations up to the amount of kids_max.
  *Saves the new generations in a 2d array so we can print the CA later.
  **/
-int generate(int aGen[], int rule, int cells, int kids_max, int storageArray[kids_max][cells]) {
+int generate(char aGen[], int rule, int cells, int kids_max, char storageArray[kids_max][cells]) {
 
   // input validation
   if (aGen == NULL || cells < 1 || kids_max < 1) {
@@ -25,7 +25,7 @@ int generate(int aGen[], int rule, int cells, int kids_max, int storageArray[kid
   }
   // variable declaration
   int i;
-  int nextgen[cells]; // create an array for the next gen
+  char nextgen[cells]; // create an array for the next gen
   int kids = 0;       // variable for the amount of generations
 
   do {
@@ -35,29 +35,29 @@ int generate(int aGen[], int rule, int cells, int kids_max, int storageArray[kid
       // set integers variables based on the neighbourhood of i
       // if its in the very first column
       if (i == 0) {
-        int left = aGen[cells - 1];
-        int middle = aGen[i];
-        int right = aGen[i + 1];
+        char left = aGen[cells - 1];
+        char middle = aGen[i];
+        char right = aGen[i + 1];
 
-        nextgen[i] = rules(rule, left, middle, right);
+        nextgen[i] = rules(rule, left, middle, right)+'0';
       }
 
       // if its in the last column
       else if (i == cells - 1) {
-        int left = aGen[i - 1];
-        int middle = aGen[i];
-        int right = aGen[0];
+        char left = aGen[i - 1];
+        char middle = aGen[i];
+        char right = aGen[0];
 
-        nextgen[i] = rules(rule, left, middle, right);
+        nextgen[i] = rules(rule, left, middle, right) + '0';
 
       }
 
       else {
         // set integers variables based on the neighbourhood of i
-        int left = aGen[i - 1];
-        int middle = aGen[i];
-        int right = aGen[i + 1];
-        nextgen[i] = rules(rule, left, middle, right);
+        char left = aGen[i - 1];
+        char middle = aGen[i];
+        char right = aGen[i + 1];
+        nextgen[i] = rules(rule, left, middle, right)+'0';
       }
       // copy row to the storage array
       storageArray[kids][i] = aGen[i];
@@ -84,13 +84,10 @@ int generate(int aGen[], int rule, int cells, int kids_max, int storageArray[kid
 /*
  *Function looks at the neigbourhood(a, b, c)
  *applies Rule 30 and returns a valid integer to
- *what the new integer should be accoording to our array.
+ *what the new integer should be accoording to the previous generation.
  */
-int rules(int rule, int a, int b, int c) {
+int rules(int rule, char a, char b, char c) {
 
-  if (a > 1 || b > 1 || c > 1) {
-    return -1;
-  }
 
   // default array to keep the ruleset
   int ruleset_to_make[8] = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -112,28 +109,28 @@ int rules(int rule, int a, int b, int c) {
   }
 
   // neighborhood in the condition, returns child
-  if (a == 1 && b == 1 && c == 1)
+  if (a == '1' && b == '1' && c == '1')
     return ruleArr[0];
-  else if (a == 1 && b == 1 && c == 0)
+  else if (a == '1' && b == '1' && c == '0')
     return ruleArr[1];
-  else if (a == 1 && b == 0 && c == 1)
+  else if (a == '1' && b == '0' && c == '1')
     return ruleArr[2];
-  else if (a == 1 && b == 0 && c == 0)
+  else if (a == '1' && b == '0' && c == '0')
     return ruleArr[3];
-  else if (a == 0 && b == 1 && c == 1)
+  else if (a == '0' && b == '1' && c == '1')
     return ruleArr[4];
-  else if (a == 0 && b == 1 && c == 0)
+  else if (a == '0' && b == '1' && c == '0')
     return ruleArr[5];
-  else if (a == 0 && b == 0 && c == 1)
+  else if (a == '0' && b == '0' && c == '1')
     return ruleArr[6];
-  else if (a == 0 && b == 0 && c == 0)
+  else if (a == '0' && b == '0' && c == '0')
     return ruleArr[7];
   else
     return 0;
 }
 
 // takes the CA (stored as an array) and prints it.
-int displayCA(int genLength, int kids, int aArray[kids][genLength]) {
+int displayCA(int genLength, int kids, char aArray[kids][genLength]) {
 
   if (aArray == NULL) {
     return -1;
@@ -146,15 +143,14 @@ int displayCA(int genLength, int kids, int aArray[kids][genLength]) {
 
     for (j = 0; j < genLength; j++) {
       // prints each value in the array(Generated CA)
-      printf("%d", aArray[i][j]);
+      printf("%c", aArray[i][j]);
     }
   }
 
   return 0;
 }
 
-int printToFile(int rule, int genLength, int kids,
-                int aArray[kids][genLength]) {
+int printToFile(int rule, int genLength, int kids, char aArray[kids][genLength]) {
   if (aArray == NULL) {
     return -1;
   }
@@ -174,7 +170,7 @@ int printToFile(int rule, int genLength, int kids,
     fprintf(f, "\n");
     for (j = 0; j < genLength; j++) {
       // prints each value in the array(Generated CA)
-      fprintf(f, "%d", aArray[i][j]);
+      fprintf(f, "%c", aArray[i][j]);
     }
   }
   fclose(f);

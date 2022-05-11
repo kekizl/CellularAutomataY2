@@ -26,15 +26,14 @@ int main() {
   scanf("%d", &kidsAmount);
 
   // populate the first generation
-  int gen[cellsAmount];
+  char gen[cellsAmount];
   for (int i = 0; i < cellsAmount; i++) {
-    gen[i] = 0;
+    gen[i] = '0';
   }
-  gen[cellsAmount / 2] = 1;
-  gen[cellsAmount / 2] = 1;
-  gen[3] = 1;
+  gen[cellsAmount / 2] = '1';
+  gen[3] = '1';
 
-  int caArray[cellsAmount][kidsAmount];
+  char caArray[cellsAmount][kidsAmount];
 
   generate(gen, ruleForCA, cellsAmount, kidsAmount, caArray);
 
