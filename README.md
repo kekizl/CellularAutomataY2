@@ -1,3 +1,6 @@
+[![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
+
 # CellularAutomataY2
 A Cellular Automata made in C.
 
@@ -18,9 +21,13 @@ y number works.
 ## Sample Output
 A sample output from running the tester file should be as follows:
 
+
 Please enter the number of the rule you want: 30
+
 Please enter the number of cells you want: 30
+
 Please enter the number of generations you want: 10
+
 
 000100000000000100000000000000
 
@@ -49,7 +56,6 @@ Possible extensions I would like to implement in the future include the followin
 
 - 2D Automata
 
-## Badges
-![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=kekizl&show_icons=true)
+
 
 ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=kekizl&theme=blue-green)
