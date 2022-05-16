@@ -25,7 +25,7 @@ int countNeighbours(int row, int col, int aGen[row][col], int r, int c) {
       }
     }
   }
-  return count;
+  return alive;
 }
 
 //print the next generation
