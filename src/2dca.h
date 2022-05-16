@@ -1,13 +1,10 @@
-/*FILE:
+/*FILE: Conways Game of Life Simulation
  *HEADER FILE:
  *BY: CHRISTIAN ZLATANOV
  */
 
-// function declarations
-// take in pointer to 2DCA,
+//amount of neighbours a cell has
+int countNeighbours(int row, int col, int aGen[row][col], int r, int c);
 
-int* generate(int row, int col, int aGen[row][col]);
-
-int neighbour_count(int row, int col, int aGen[row][col], int r, int c);
-
+//print a generation
 int printGen(int row, int col, int aGen[row][col]);
