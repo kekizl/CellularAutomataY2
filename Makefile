@@ -5,7 +5,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Wno-comment -Wno-error=comment
 
 2dtest: 2dca.o 2dca_main.o
-	$(CC) $(CFLAGS) 2dca.o 2dca_tester.o -o 2dtest.out
+	$(CC) $(CFLAGS) 2dca.o 2dca_main.o -o 2dtest.out
 test: 1dca.o 1dca_tester.o
 	$(CC) $(CFLAGS) 1dca.o 1dca_tester.o -o test.out
 

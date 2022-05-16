@@ -1,5 +1,5 @@
-/*FILE:
- *TESTER FOR CELLULAR AUTOMATON
+/*FILE: Conways Game of Life Simulation
+ *MAIN
  *BY: CHRISTIAN ZLATANOV
  */
 
@@ -13,7 +13,7 @@
 
 int main() {
 
-  int neighbour_live_cell, amountOfGens, iteration = 0, row, col;
+  int aliveNeighbours, amountOfGens, iteration = 0, row, col;
 
   printf("Please enter the amount of rows you want: ");
   scanf("%d", &col);
@@ -24,23 +24,25 @@ int main() {
 
   int firstGen[row][col], secondGen[row][col];
 
+  //populate first gen with random numbers
   for (int i = 0; i < row; i++) {
     for (int j = 0; j < col; j++) {
       firstGen[i][j] = rand() % 2;
     }
   }
+  printf("\nFirst Generation:");
   printGen(row, col, firstGen);
   do {
-    // next canvas values based on live neighbour count
+    //values of next generation based on neighbouring cells
     for (int i = 0; i < row; i++) {
       for (int j = 0; j < col; j++) {
-        neighbour_live_cell = countNeighbours(row, col, firstGen, i, j);
+        aliveNeighbours = countNeighbours(row, col, firstGen, i, j);
         if (firstGen[i][j] == 1 &&
-            (neighbour_live_cell == 2 || neighbour_live_cell == 3)) {
+            (aliveNeighbours == 2 || aliveNeighbours == 3)) {
           secondGen[i][j] = 1;
         }
 
-        else if (firstGen[i][j] == 0 && neighbour_live_cell == 3) {
+        else if (firstGen[i][j] == 0 && aliveNeighbours == 3) {
           secondGen[i][j] = 1;
         }
 
@@ -49,7 +51,8 @@ int main() {
         }
       }
     }
-    printf("\n\n");
+    
+    printf("\n\nNext Generation:");
     printGen(row, col, secondGen);
 
     for (int i = 0; i < row; i++) {
