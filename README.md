@@ -54,14 +54,42 @@ Please enter the number of generations you want: 10
 101100101110001100100011010111
 ```
 
-## How to run(Conway's Game of Life)
+## How to run (Conway's Game of Life)
 Similarly type 'make 2dtest' and run the .out file created. 
 
 First you will be prompted to enter the width of the automata. Any number works.
 
 Next you will be asked to enter the depth of the automata. Enter a number of your choice.
 
-Finally you will be asked to enter the amount of time the simulation will be ran. 
+Finally you will be asked to enter the amount of generations for which the simulation will run. 
+
+Output can look as follows:
+```
+Please enter the amount of rows you want: 5
+Please enter the amount of columns you want: 5
+Please enter the amount of gens you want: 3
+
+First Generation:
+10111
+10011
+01011
+00000
+10110
+
+Next Generation:
+01101
+10000
+00111
+01001
+00000
+
+Next Generation:
+01000
+00001
+01111
+00101
+00000%     
+```
 
 ## Future Enhancements
 Possible extensions I would like to implement in the future include the following:
